@@ -21,7 +21,7 @@ export const userFindRouter: FastifyPluginAsync<{
       const id = request.params.id;
       const res = await opts.service(id);
       const response = findSerializer(res);
-      return reply.status(response.status).send(response.content);
+      return reply.status(200).send(response.content);
     }
   );
 };

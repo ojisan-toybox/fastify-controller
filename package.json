@@ -10,6 +10,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@fastify/swagger": "^8.12.2",
+    "@fastify/swagger-ui": "^2.0.1",
     "fastify": "^4.25.2",
     "json-schema-to-ts": "^3.0.0"
   },
