@@ -1,11 +1,14 @@
 import Fastify from "fastify";
+import { userFindRouter } from "./feature/user/router.js";
+import { User } from "./feature/user/entity.js";
 const fastify = Fastify({
   logger: true,
 });
 
 // Declare a route
-fastify.get("/", async function handler(request, reply) {
-  return { hello: "world" };
+fastify.register(userFindRouter, {
+  prefix: "/users",
+  service: (id: string) => new User(id),
 });
 
 // Run the server!
